@@ -14,7 +14,6 @@ export default function Footer() {
         <div className="flex items-center gap-6">
           <a
             className="text-text-muted hover:text-primary transition-opacity duration-200 font-body-md text-body-md"
-            about="_ismail"
             href="https://github.com/ismailone23"
           >
             Github

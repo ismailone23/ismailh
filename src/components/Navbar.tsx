@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { scrollToSection } from "../utils/scroll";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,14 +15,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string,
-  ) => {
-    setIsMenuOpen(false);
-    scrollToSection(e, id);
-  };
-
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${scrolled ? "bg-background/80 backdrop-blur-xl border-surface-stroke shadow-lg" : "bg-transparent border-transparent"}`}
@@ -33,10 +24,6 @@ export default function Navbar() {
         <a
           className="flex items-center gap-3 group cursor-pointer"
           href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
         >
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container border border-surface-stroke text-primary transition-all duration-300 group-hover:bg-primary-container group-hover:text-surface-container-low shadow-sm group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             <span className="brand-mark" aria-hidden="true" />
@@ -50,28 +37,24 @@ export default function Navbar() {
           <a
             className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
             href="#projects"
-            onClick={(e) => handleNavClick(e, "projects")}
           >
             Projects
           </a>
           <a
             className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
             href="#skills"
-            onClick={(e) => handleNavClick(e, "skills")}
           >
             Skills
           </a>
           <a
             className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
             href="#experience"
-            onClick={(e) => handleNavClick(e, "experience")}
           >
             Experience
           </a>
           <a
             className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
             href="#hero"
-            onClick={(e) => handleNavClick(e, "hero")}
           >
             About
           </a>
@@ -109,28 +92,28 @@ export default function Navbar() {
           <a
             className="font-body-md text-on-surface-variant p-2 cursor-pointer"
             href="#projects"
-            onClick={(e) => handleNavClick(e, "projects")}
+            onClick={() => setIsMenuOpen(false)}
           >
             Projects
           </a>
           <a
             className="font-body-md text-on-surface-variant p-2 cursor-pointer"
             href="#skills"
-            onClick={(e) => handleNavClick(e, "skills")}
+            onClick={() => setIsMenuOpen(false)}
           >
             Skills
           </a>
           <a
             className="font-body-md text-on-surface-variant p-2 cursor-pointer"
             href="#experience"
-            onClick={(e) => handleNavClick(e, "experience")}
+            onClick={() => setIsMenuOpen(false)}
           >
             Experience
           </a>
           <a
             className="font-body-md text-on-surface-variant p-2 cursor-pointer"
             href="#hero"
-            onClick={(e) => handleNavClick(e, "hero")}
+            onClick={() => setIsMenuOpen(false)}
           >
             About
           </a>

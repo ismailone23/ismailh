@@ -92,7 +92,6 @@ export const metadata: Metadata = {
     title: defaultTitle,
     description,
     images: ["/og-image.png"],
-    // creator: "@handle",
   },
   icons: {
     icon: [
@@ -101,7 +100,6 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
-  // verification: { google: "YOUR_SEARCH_CONSOLE_TOKEN" },
 };
 
 const jsonLd = {
@@ -139,7 +137,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`dark scroll-smooth ${hanken.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-background text-on-surface font-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-background">

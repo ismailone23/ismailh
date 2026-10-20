@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-email/components": "^1.0.12",
     "@react-email/render": "^2.0.8",
     "framer-motion": "^12.39.0",
     "next": "15.5.26",

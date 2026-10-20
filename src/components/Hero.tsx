@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { scrollToSection } from "../utils/scroll";
 
 export default function Hero() {
   return (
@@ -39,14 +38,12 @@ export default function Hero() {
             <a
               className="inline-flex items-center justify-center px-8 py-2 rounded-xl bg-primary-container text-surface-container-low font-body-md font-bold hover:opacity-90 transition-opacity cursor-pointer"
               href="#projects"
-              onClick={(e) => scrollToSection(e, "projects")}
             >
               Projects
             </a>
             <a
               className="inline-flex items-center justify-center px-8 py-2 rounded-xl border border-surface-stroke text-text-primary font-body-md hover:bg-surface-stroke transition-colors cursor-pointer"
               href="#contact"
-              onClick={(e) => scrollToSection(e, "contact")}
             >
               Contact Me
             </a>

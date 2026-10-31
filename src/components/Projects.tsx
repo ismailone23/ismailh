@@ -57,19 +57,19 @@ export default function Projects() {
       className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32"
       id="projects"
     >
-      <div className="flex flex-col items-start mb-16">
+      <div className="flex flex-col items-start mb-12">
         <h2 className="font-headline-md text-headline-md text-text-primary mb-4">
-          Selected Works
+          Selected work
         </h2>
         <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-          A curated selection of recent engineering and design projects.
+          Two apps on the App Store, a live admin panel and two MIST projects
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <div
             key={project.title}
-            className={`group rounded-[12px] bg-surface-container-low border border-surface-stroke overflow-hidden transition-all duration-300 glow-hover relative ${project.link ? "cursor-pointer" : ""} ${index % 2 !== 0 ? "md:mt-16" : ""}`}
+            className={`group rounded-[12px] bg-surface-container-low border border-surface-stroke overflow-hidden transition-colors duration-150 relative ${project.link ? "hover:border-on-surface-variant/40 hover:bg-surface-container" : ""} ${index % 2 !== 0 ? "md:mt-16" : ""}`}
           >
             {project.link && (
               <a
@@ -81,39 +81,38 @@ export default function Projects() {
               />
             )}
             <div className="aspect-video overflow-hidden border-b border-surface-stroke relative">
-              <div className="absolute inset-0 bg-primary-container/10 group-hover:opacity-0 transition-opacity z-10 pointer-events-none"></div>
               <Image
                 src={project.image}
                 alt={`Illustrative preview of ${project.title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-cover"
               />
             </div>
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-4">
+            <div className="p-6">
+              <div className="flex justify-between items-start gap-4 mb-3">
                 <h3 className="font-headline-md text-2xl text-text-primary">
                   {project.title}
                 </h3>
                 {project.link ? (
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="shrink-0 mt-1.5 text-text-muted transition-colors duration-150 group-hover:text-text-primary" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M7 17 17 7M8 7h9v9" />
                   </svg>
                 ) : (
-                  <span className="font-label-caps text-[10px] uppercase tracking-wider text-text-muted">Private project</span>
+                  <span className="shrink-0 mt-1.5 font-label-caps text-label-caps text-text-muted">Private project</span>
                 )}
               </div>
               <p className="font-body-md text-on-surface-variant mb-4">
                 {project.description}
               </p>
               <p className="font-body-md text-sm text-text-primary mb-6">
-                <span className="text-on-surface-variant">Outcome: </span>{project.outcome}
+                <span className="text-text-muted">Outcome: </span>{project.outcome}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded bg-surface-variant/50 text-text-primary font-label-caps text-label-caps"
+                    className="px-2 py-1 rounded-lg border border-surface-stroke text-on-surface-variant font-label-caps text-label-caps"
                   >
                     {tag}
                   </span>

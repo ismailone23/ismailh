@@ -27,7 +27,7 @@ export default function Experience() {
           id="experience-heading"
           className="font-headline-md text-headline-md text-text-primary mb-10"
         >
-          Career Trajectory
+          Experience
         </h2>
         <ol className="border-t border-surface-stroke">
           {experience.map((entry) => (
@@ -35,17 +35,19 @@ export default function Experience() {
               key={entry.role}
               className="grid gap-3 border-b border-surface-stroke py-8 md:grid-cols-[190px_minmax(0,1fr)] md:gap-10 md:py-9"
             >
-              <span className="font-label-caps text-xs uppercase tracking-[0.06em] text-on-surface-variant md:pt-2">
+              <span className="font-label-caps text-label-caps text-text-muted tabular-nums md:pt-2">
                 {entry.period}
               </span>
               <div>
-                <h3 className="font-headline-md text-[clamp(1.5rem,2vw,1.875rem)] font-bold leading-tight tracking-[-0.02em] text-text-primary">
+                <h3 className="font-headline-md text-2xl font-medium leading-tight tracking-[-0.01em] text-text-primary">
                   {entry.role}
                 </h3>
-                <p className="font-body-md text-on-surface-variant mt-1 mb-4">
-                  {entry.organization}
-                </p>
-                <p className="font-body-md text-body-md text-on-surface-variant max-w-[65ch]">
+                {entry.organization && (
+                  <p className="font-body-md text-on-surface-variant mt-1">
+                    {entry.organization}
+                  </p>
+                )}
+                <p className="font-body-md text-body-md text-on-surface-variant max-w-[65ch] mt-4">
                   {entry.description}
                 </p>
               </div>

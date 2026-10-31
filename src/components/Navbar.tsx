@@ -17,43 +17,43 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${scrolled ? "bg-background/80 backdrop-blur-xl border-surface-stroke shadow-lg" : "bg-transparent border-transparent"}`}
+      className={`fixed top-0 w-full z-50 transition-[background-color,border-color] duration-200 border-b ${scrolled ? "bg-background/80 backdrop-blur-xl border-surface-stroke" : "bg-transparent border-transparent"}`}
       id="navbar"
     >
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-16">
         <a
-          className="flex items-center gap-3 group cursor-pointer"
+          className="flex items-center gap-3 group rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           href="#"
         >
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container border border-surface-stroke text-primary transition-all duration-300 group-hover:bg-primary-container group-hover:text-surface-container-low shadow-sm group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-            <span className="brand-mark" aria-hidden="true" />
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container border border-surface-stroke text-primary transition-colors duration-150 group-hover:bg-primary-container group-hover:text-surface-container-low">
+            <span className="brand-mark size-4" aria-hidden="true" />
           </div>
-          <span className="font-display-md text-2xl font-extrabold tracking-tight text-text-primary">
+          <span className="font-headline-md text-lg font-medium text-text-primary">
             Ismail
-            <span className="text-text-muted font-normal animate-pulse">_</span>
+            <span className="text-text-muted font-normal">_</span>
           </span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           <a
-            className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
+            className="font-body-md text-sm text-on-surface-variant hover:text-text-primary transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             href="#projects"
           >
             Projects
           </a>
           <a
-            className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
+            className="font-body-md text-sm text-on-surface-variant hover:text-text-primary transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             href="#skills"
           >
             Skills
           </a>
           <a
-            className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
+            className="font-body-md text-sm text-on-surface-variant hover:text-text-primary transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             href="#experience"
           >
             Experience
           </a>
           <a
-            className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 nav-link cursor-pointer"
+            className="font-body-md text-sm text-on-surface-variant hover:text-text-primary transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             href="#hero"
           >
             About
@@ -88,30 +88,30 @@ export default function Navbar() {
       <div
         className={`md:hidden bg-surface-container border-b border-surface-stroke absolute w-full ${isMenuOpen ? "" : "hidden"}`}
       >
-        <div className="flex flex-col p-4 gap-4">
+        <div className="flex flex-col p-4 gap-1">
           <a
-            className="font-body-md text-on-surface-variant p-2 cursor-pointer"
+            className="font-body-md text-on-surface-variant hover:text-text-primary px-2 py-3 rounded-lg transition-colors duration-150"
             href="#projects"
             onClick={() => setIsMenuOpen(false)}
           >
             Projects
           </a>
           <a
-            className="font-body-md text-on-surface-variant p-2 cursor-pointer"
+            className="font-body-md text-on-surface-variant hover:text-text-primary px-2 py-3 rounded-lg transition-colors duration-150"
             href="#skills"
             onClick={() => setIsMenuOpen(false)}
           >
             Skills
           </a>
           <a
-            className="font-body-md text-on-surface-variant p-2 cursor-pointer"
+            className="font-body-md text-on-surface-variant hover:text-text-primary px-2 py-3 rounded-lg transition-colors duration-150"
             href="#experience"
             onClick={() => setIsMenuOpen(false)}
           >
             Experience
           </a>
           <a
-            className="font-body-md text-on-surface-variant p-2 cursor-pointer"
+            className="font-body-md text-on-surface-variant hover:text-text-primary px-2 py-3 rounded-lg transition-colors duration-150"
             href="#hero"
             onClick={() => setIsMenuOpen(false)}
           >

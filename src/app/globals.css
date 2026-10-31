@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface-container-highest: #404040;
-  --color-on-surface-variant: #b5b5b5;
-  --color-surface-container-low: #121212;
-  --color-text-muted: #969696;
+  --color-surface-container-highest: #3a3a3f;
+  --color-on-surface-variant: #a1a1a6;
+  --color-surface-container-low: #141416;
+  --color-text-muted: #85858b;
   --color-error: #ffb4ab;
-  --color-surface-container: #1a1a1a;
-  --color-surface-stroke: #333333;
-  --color-surface-variant: #1a1a1a;
-  --color-background: #000000;
-  --color-primary-container: #ffffff;
-  --color-primary: #ffffff;
-  --color-surface: #000000;
-  --color-surface-container-lowest: #0a0a0a;
-  --color-text-primary: #ffffff;
-  --color-on-surface: #ffffff;
+  --color-surface-container: #1a1a1d;
+  --color-surface-stroke: #26262a;
+  --color-surface-variant: #1a1a1d;
+  --color-background: #0b0b0d;
+  --color-primary-container: #ededed;
+  --color-primary: #ededed;
+  --color-surface: #0b0b0d;
+  --color-surface-container-lowest: #09090a;
+  --color-text-primary: #ededed;
+  --color-on-surface: #ededed;
 
   --radius-DEFAULT: 0.125rem;
   --radius-lg: 0.25rem;
@@ -36,22 +36,22 @@
   --text-display-lg-mobile: 48px;
   --text-display-lg-mobile--line-height: 1.1;
   --text-display-lg-mobile--letter-spacing: -0.02em;
-  --text-display-lg-mobile--font-weight: 800;
+  --text-display-lg-mobile--font-weight: 500;
 
   --text-display-lg: 72px;
   --text-display-lg--line-height: 1.1;
-  --text-display-lg--letter-spacing: -0.04em;
-  --text-display-lg--font-weight: 800;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 500;
 
   --text-headline-md: 32px;
   --text-headline-md--line-height: 1.2;
   --text-headline-md--letter-spacing: -0.02em;
-  --text-headline-md--font-weight: 700;
+  --text-headline-md--font-weight: 500;
 
   --text-label-caps: 12px;
-  --text-label-caps--line-height: 1;
-  --text-label-caps--letter-spacing: 0.1em;
-  --text-label-caps--font-weight: 500;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0;
+  --text-label-caps--font-weight: 400;
 
   --text-body-md: 16px;
   --text-body-md--line-height: 1.5;
@@ -70,26 +70,6 @@
 }
 
 @layer utilities {
-  .glow-hover:hover {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
-    border-color: var(--color-primary);
-  }
-  .nav-link {
-    position: relative;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-primary);
-    transition: width 0.3s ease;
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
   .skills-marquee-track {
     animation: skills-marquee 38s linear infinite;
   }
@@ -110,11 +90,4 @@
 /* ponytail: native anchors and scroll padding replace custom scroll math. */
 html {
   scroll-padding-top: 5rem;
-}
-
-body {
-  background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
 }
